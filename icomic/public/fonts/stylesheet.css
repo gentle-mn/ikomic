@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Anime Ace 2.0 BB';
+    src: url('AnimeAce20BB.woff2') format('woff2'),
+        url('AnimeAce20BB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

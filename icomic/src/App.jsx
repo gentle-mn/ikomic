@@ -1,24 +1,31 @@
-import { Route, Routes, Link } from "react-router-dom";
-import ForgotPassword from "./pages/ForgotPassword";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
 import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
+import Comic from "./pages/Comic";
+import Manga from "./pages/Manga";
+import Merchandise from "./pages/merchandise";
+import Marvel from "./Marvel";
 
 function App() {
   return (
     <>
-    <Navbar/>
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
-      </Routes>
-      <Footer />
+      <Router>
+        <div>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/comic" exact element={<Comic />} />
+            <Route path="/manga" element={Manga} />
+            <Route path="/merchandise" element={Merchandise} />
+            <Route path="/marvel" element={<Marvel/>} />
+            <Route path="/:id" element={<Comic/>} />
+          </Routes>
+          <div className="sticky top-[100vh]">
+          <Footer />
+          </div>
+        </div>
+      </Router>
     </>
   );
 }
